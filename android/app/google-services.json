@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "685169361726",
+    "project_id": "cloq2ndchallenge",
+    "storage_bucket": "cloq2ndchallenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685169361726:android:41931bbaca9ef51abf626f",
+        "android_client_info": {
+          "package_name": "com.cloq2ndchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685169361726-v1r4beoqdkh9hh2e3gfm6hch92uivog4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cloq2ndchallenge",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "685169361726-inarfba4gpdea5mhhv5hbm6b70483b84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_d1kd8IjcIBJcngdmLMtqWS_hZwO_aDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685169361726-inarfba4gpdea5mhhv5hbm6b70483b84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

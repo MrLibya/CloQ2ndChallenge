@@ -1,0 +1,1 @@
+export const Loading = "#B7163A";
