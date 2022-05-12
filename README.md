@@ -36,17 +36,17 @@ The firestore scheme only have 2 collections
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-		function isSignedIn() {
+    function isSignedIn() {
     	return request.auth != null;
-		}
+    }
     
     match /users/{userId} {
       allow read, update, delete: if isSignedIn() && request.auth.uid == userId;
       allow create: if isSignedIn();
     }
-		match /poems/{poem}{
+    match /poems/{poem}{
       function isOwner(res){
-				return isSignedIn() && res.data.owner == request.auth.uid;
+        return isSignedIn() && res.data.owner == request.auth.uid;
       }
       allow create: if isSignedIn();
       allow read, delete, update: if isOwner(resource);
