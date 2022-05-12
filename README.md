@@ -17,6 +17,44 @@ This is just normal CRUD application ( poems ), The project uses React Native (J
 ## Notes
 - There's no styling on the app
 
+## Firestore Scheme
+The firestore scheme only have 2 collections
+```
+/users/{userID}:
+  - battery: number
+  - device: map
+  - email: string
+
+/poems/{poem}:
+  - title: string
+  - content: string
+  - owner: string 
+```
+
+## Firestore Rules
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+		function isSignedIn() {
+    	return request.auth != null;
+		}
+    
+    match /users/{userId} {
+      allow read, update, delete: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn();
+    }
+		match /poems/{poem}{
+      function isOwner(res){
+				return isSignedIn() && res.data.owner == request.auth.uid;
+      }
+      allow create: if isSignedIn();
+      allow read, delete, update: if isOwner(resource);
+    }
+  }
+}
+```
+
 ## Installation
 
 ```bash
